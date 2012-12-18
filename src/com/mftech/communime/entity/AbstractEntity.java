@@ -11,6 +11,7 @@ import javax.persistence.Transient;
  * @author fred
  * 
  */
+
 @MappedSuperclass
 public abstract class AbstractEntity {
 	private Integer id;
