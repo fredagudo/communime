@@ -49,4 +49,43 @@ public abstract class AbstractEntity {
 		this.createdDate = createdDate;
 	}
 
+/*	@Override  //todo
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((createdById == null) ? 0 : createdById.hashCode());
+		result = prime * result + ((createdDate == null) ? 0 : createdDate.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AbstractEntity other = (AbstractEntity) obj;
+		if (createdById == null) {
+			if (other.createdById != null)
+				return false;
+		} else if (!createdById.equals(other.createdById))
+			return false;
+		if (createdDate == null) {
+			if (other.createdDate != null)
+				return false;
+		} else if (!createdDate.equals(other.createdDate))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	*/
+	
 }

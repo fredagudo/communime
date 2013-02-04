@@ -12,7 +12,7 @@ import com.mftech.communime.type.Status;
  * @author fred
  * 
  */
-public abstract class Party extends AbstractEntity {
+public abstract class Party extends AbstractEntity implements CommunityMember {
 	private Status status;
 
 	public Party() {

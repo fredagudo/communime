@@ -1,47 +1,52 @@
 package com.mftech.communime.entity;
 
-import java.util.ArrayList;
 
-import com.mftech.communime.exception.Failure;
-import com.mftech.communime.exception.InvalidMember;
-import com.mftech.communime.exception.InvalidStatus;
+import java.util.HashSet;
 
 /**
- * Club, school, social group etc ..
+ * 
+ * Defines a community and its members, a community can also be part of another
+ * community.
+ *  Club, school, social group etc ..
  * 
  * @author fred
  * 
  */
-public class Community extends AbstractEntity {
-	private ArrayList<Party> members;
+public class Community extends AbstractEntity implements CommunityMember {
+	private String name;
 
-	public Community() {
+	private HashSet<CommunityMember> members;
+
+	public Community(String name) {
 		super();
-		members = new ArrayList<Party>();
+		this.name = name;
+		members = new HashSet<CommunityMember>();
 	}
 
-	public ArrayList<Party> getMembers() {
+	public HashSet<CommunityMember> getMembers() {
 		return members;
 	}
 
-	public void setMembers(ArrayList<Party> members) {
+	public void setMembers(HashSet<CommunityMember> members) {
 		this.members = members;
 	}
 
 	/**
-	 * Add one member to the community list
+	 * Add one CommunityMember to the community list
 	 * 
 	 * @param member
 	 */
-	public void add(Party member) {
+	public void add(CommunityMember member) {
 		if (member == null)
-		//todo	throw new InvalidMember("Cannot add null member to comminuty");
+			// todo throw new
+			// InvalidMember("Cannot add null member to comminuty");
 
-		if (member.isNew())
-		//todo	throw new RuntimeException(Failure.INVALID_STATUS + ": Cannot add incompleted members to community");
+			if (((Party) member).isNew())
+				// todo throw new RuntimeException(Failure.INVALID_STATUS +
+				// ": Cannot add incompleted members to community");
 
-		if (members == null)
-			members = new ArrayList<Party>();
+				if (members == null)
+					members = new HashSet<CommunityMember>();
 
 		members.add(member);
 	}
@@ -50,4 +55,15 @@ public class Community extends AbstractEntity {
 		members.remove(member);
 
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
 }
