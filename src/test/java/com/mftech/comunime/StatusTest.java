@@ -1,4 +1,4 @@
-package test;
+package com.mftech.communime;
 
 import static org.junit.Assert.assertEquals;
 
